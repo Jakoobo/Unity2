@@ -1,7 +1,7 @@
 import pgzrun
 from pgzero.screen import Screen
 from pgzero.builtins import Actor, keyboard
-from postac import Gracz
+from klasa postaci gracza import Gracz
 
 
 
