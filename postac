@@ -10,7 +10,8 @@ class Gracz:
         self.gracz = Actor("obraz_gracza")
         self.gracz.x = 290
         self.gracz.y = 570
-        self.lives = 50 #jakieś początkowe życie #dopracować
+        self.star_pos = self.gracz.x, self.gracz.y
+        self.lives = 3 
 
     def on_key_down(self, key):
         if key == self.keys.RIGHT:
