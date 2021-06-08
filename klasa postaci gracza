@@ -11,7 +11,7 @@ class Gracz:
         self.gracz.x = 290
         self.gracz.y = 570
         self.start_position = self.gracz.x, self.gracz.y
-        self.lives = 50 #jakieś początkowe życie #dopracować
+        self.lives = 3
 
     def on_key_down(self, key):
         if key == self.keys.RIGHT:
