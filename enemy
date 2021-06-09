@@ -1,0 +1,22 @@
+from pgzero.builtins import Actor, Animate
+ftom random import randint
+from mapa import possible_directions
+
+class Enemy:
+    def __init__(self):
+        self.enemies = [Actor(f"enemy{i}", pos = (250+(i*20), 370)) for i in range(1, 5)]
+        for enemy in self.enemies:
+            enemy.dir = randint(0, 3)
+            enemy.status = 0
+        self.enemy_moves = (1, 0), (0, -1), (-1, 0), (0, 1)
+        self.enemy_speed = 3
+
+    def draw(self):
+        for enemy in self.enemies:
+            enemy.draw()
+
+    def update(self):
+        self.move_enemy()
+
+    def move_enemy(self):
+        pass
