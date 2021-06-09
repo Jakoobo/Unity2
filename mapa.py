@@ -1,6 +1,6 @@
 from pygame import image, Color
 
-moveimage = image.load("map1.jpg) 
+moveimage = image.load("mapa.jpg) 
 
 def check_move_point(gracz):
     move_x, move_y = 0, 0
