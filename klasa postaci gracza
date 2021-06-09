@@ -46,7 +46,7 @@ class Gracz:
         pass
 
         #Animacja postaci
-        postac_prosto = "nazwa obrazka"
+        
         postac_lewo = "nazwa obrazka"
         postac_prawo = "nazwa obrazka"
 
