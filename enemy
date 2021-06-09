@@ -2,13 +2,22 @@ from pgzero.builtins import Actor, Animate
 ftom random import randint
 from mapa import possible_directions
 
+enemy_should_move = 4 #bo 4 enemies, 4 = yes 0 = no
+
+def enemy_should_move_up():
+    global enemy_should_move
+    enemy_should_move +=1
+       
+
 class Enemy:
     def __init__(self):
         self.enemies = [Actor(f"enemy{i}", pos = (250+(i*20), 370)) for i in range(1, 5)]
         for enemy in self.enemies:
             enemy.dir = randint(0, 3)
             enemy.status = 0
-        self.enemy_moves = (1, 0), (0, -1), (-1, 0), (0, 1)
+            enemy.in_center = True
+            enemy.decide_point = 1, 1
+        self.enemy_moves = (18, 0), (0, -18), (-18, 0), (0, 18)
         self.enemy_speed = 3
 
     def draw(self):
@@ -19,4 +28,13 @@ class Enemy:
         self.move_enemy()
 
     def move_enemy(self):
-        pass
+        global enemy_should_move
+        if enemy_should_move < 4:
+            return
+        enemy_should_move = 0
+        for enemy in self.enemies:
+            directions = get_possible_directions(enemy)
+            enemy.dir = randint(0,3)
+            while directions[enemy.dir] == 0:
+                enemy.dir = randint(0, 3)
+            animate(enemy, pos = (enemy.x + self.enemy_moves[enemy.dir][0]*20, enemy.y + self.enemy_moves[enemy.dir][1]*20), duration = 1/self.enemy_speed, tween = "linear", on_finished=enemy_should_move_up)
