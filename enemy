@@ -11,7 +11,7 @@ def enemy_should_move_up():
 
 class Enemy:
     def __init__(self):
-        self.enemies = [Actor(f"enemy{i}", pos = (250+(i*20), 370)) for i in range(1, 5)]
+        self.enemies = [Actor(f"enemy{i}", pos = (400+(i*20), 300)) for i in range(1, 5)]
         for enemy in self.enemies:
             enemy.dir = randint(0, 3)
             enemy.status = 0
