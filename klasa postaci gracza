@@ -14,6 +14,15 @@ class Gracz:
         self.money = 100
         self.lives = 3
         
+    def show_money(self):
+        return self.money
+        
+    def current_money(self, event):    #poprawić i pobrać konkretny event
+        actual_money = show_money():
+        actual_money -= event
+        global money
+        money = actual_money
+        
     def show_lives(self):
         return self.lives
         
@@ -48,6 +57,9 @@ class Gracz:
         self.gracz.draw()
         for live in range(show_lives(self)):
             screen.blit("ikonka_zycia", (5 + live * 20, 20))
+        for money in range(show_lives):
+            screen.blit("poziom_pieniendzy", (5 + money * 1, 40)) #*1 bo to jest prosty pasek o wymarach 1x20
+       
 
     def move_pressed(self):
         pressed = any(value for value in self.keys_active.values())
