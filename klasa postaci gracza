@@ -46,7 +46,7 @@ class Gracz:
 
     def draw(self, screen):
         self.gracz.draw()
-        for live in range(self.lives):
+        for live in range(show_lives(self)):
             screen.blit("ikonka_zycia", (5 + live * 20, 20))
 
     def move_pressed(self):
