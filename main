@@ -2,7 +2,7 @@ import pgzrun
 from pgzero.screen import Screen
 from pgzero.builtins import Actor, keyboard
 from klasa postaci gracza import Gracz
-from enemy import Enemy
+from enemy import Enemy, enemy_should_move
 
 
 WIDTH = 600
@@ -26,7 +26,7 @@ def on_key_down(key):
 
 
 def on_key_up(key):
-    gracz.on_key_up(key)
+    gracz.on_key_up(key)    #posatć porusza się tylko wtedy gdy jest przycisk wciśnięty
 
 
 def update():
