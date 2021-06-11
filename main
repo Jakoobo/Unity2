@@ -3,6 +3,7 @@ from pgzero.screen import Screen
 from pgzero.builtins import Actor, keyboard
 from klasa postaci gracza import Gracz
 from enemy import Enemy, enemy_should_move
+# form event import Event
 
 
 WIDTH = 600
@@ -15,11 +16,19 @@ enemy = Enemy()
 #mapa kolorowa, to tylko nakładka
 color_map = Actor('map1a.jpg', pos = (300, 360), achor = (0, 0)) #pos=(0, 60) coś tu się psuje
 
+def End_game():
+    if gracz.lives <= 0 or gracz.money <= 0:
+        global end_game
+        end_game = True
+
+
 def draw():
     screen.fill((0, 0, 0))
     color_map.draw()
     gracz.draw(screen)
     enemy.draw()
+    if end_game = True:
+        screen.clear()           #tu jest zakończenie i ewentualnie przejście do kolejnej mapy
 
 def on_key_down(key):
     gracz.on_key_down(key)
@@ -32,4 +41,6 @@ def on_key_up(key):
 def update():
     gracz.update()
     enemy.update()
+    End_game()
+    
 pgzrun.go()
