@@ -1,0 +1,22 @@
+# #wersja bardzo prototypowa
+#
+# time_left = 5 #ile czasu pozostało graczowi
+# last_time = 0 #kiedy ostatnio sprawdzaliśmy czas
+# end_by_time = False
+#
+# now = time.time()
+# if not last_time:
+#     last_time = now
+# delta_time = now - last_time #ile czasu upłynęło od momentu kiedy sprawdzaliśmy czas
+# time_left -= delta_time
+# last_time = now
+#
+# if time_left < 0:
+#     time_left = 0
+#     end_by_time = True
+#
+#
+# if not collision: #inna przyczyna
+#     length = 10*time_left
+#     rect = Rect(width/2 - lenght/2, 20*height/450-40, lenght, height/450)
+#     screen.draw.filled_rect(Rect(), RED) #jeszcze to 
