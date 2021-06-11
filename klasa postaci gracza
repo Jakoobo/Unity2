@@ -11,6 +11,7 @@ class Gracz:
         self.gracz.x = 290
         self.gracz.y = 570
         self.start_position = self.gracz.x, self.gracz.y
+        self.money = 100
         self.lives = 3
 
     def on_key_down(self, key):
