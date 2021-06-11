@@ -43,7 +43,9 @@ class Gracz:
         return pressed
 
     def update(self):
-        pass
+        can_move = check_move_point(self.gracz)
+        if not can_move:
+            return
 
         #Animacja postaci
         
