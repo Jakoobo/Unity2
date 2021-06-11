@@ -13,6 +13,16 @@ class Gracz:
         self.start_position = self.gracz.x, self.gracz.y
         self.money = 100
         self.lives = 3
+        
+    def show_lives(self):
+        return self.lives
+        
+    def current_lives(self, event):
+        actual_lives = show_lives():
+        actual_lives -= event
+        global lives
+        lives = actual_lives
+        
 
     def on_key_down(self, key):
         if key == self.keys.RIGHT:
@@ -37,7 +47,7 @@ class Gracz:
     def draw(self, screen):
         self.gracz.draw()
         for live in range(self.lives):
-            screen.blit() #Tu będzie licznik życia (kto się tym zajmie?)
+            screen.blit("ikonka_zycia", (5 + live * 20, 20))
 
     def move_pressed(self):
         pressed = any(value for value in self.keys_active.values())
