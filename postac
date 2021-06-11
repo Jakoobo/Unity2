@@ -51,7 +51,7 @@ class Gracz:
         postac_lewo = "nazwa obrazka"
         postac_prawo = "nazwa obrazka"
 
-# pacman.angle to jest kąt nachylenia pacmana
+# gracz.angle to jest kąt nachylenia gracza
         if self.gracz.keys_active['right']:
             self.gracz.x += 1
             self.gracz.image = postac_prawo
