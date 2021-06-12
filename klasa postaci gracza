@@ -4,7 +4,7 @@ from time import time
 
 class Gracz:
     def __init__(self, keys):
-        self.images = ["obraz_gracza"] #trzeba tu wprowadzić grafiki postaci gracza
+        self.images = ["obraz_gracza", "serce", "moneta","ninja_left", "ninja_right"] #trzeba tu wprowadzić grafiki postaci gracza
         self.keys = keys
         self.keys_active = {'right': False, 'up': False, 'left': False, 'down': False}
         self.gracz = Actor("obraz_gracza")
@@ -13,7 +13,9 @@ class Gracz:
         self.start_position = self.gracz.x, self.gracz.y
         self.money = 100
         self.lives = 3
-        
+
+#poziomy wartosci życia, pieniędzy i ich wyświetlanie 
+
     def show_money(self):
         return self.money
         
@@ -32,7 +34,7 @@ class Gracz:
         global lives
         lives = actual_lives
         
-
+#ruch postaci
     def on_key_down(self, key):
         if key == self.keys.RIGHT:
             self.gracz.keys_active['right'] = True
@@ -54,11 +56,14 @@ class Gracz:
             self.gracz.keys_active['left'] = False
 
     def draw(self, screen):
+        ikonka_zycia = "serce"
+        ikonka_pieniadza = "moneta"
+    
         self.gracz.draw()
         for live in range(show_lives(self)):
-            screen.blit("ikonka_zycia", (5 + live * 20, 20))
+            screen.blit(ikonka_zycia, (5 + live * 20, 20))
         for money in range(show_lives):
-            screen.blit("poziom_pieniendzy", (5 + money * 1, 40)) #*1 bo to jest prosty pasek o wymarach 1x20
+            screen.blit(ikonka_pieniadza, (5 + money * 20, 20)) 
        
 
     def move_pressed(self):
@@ -72,8 +77,8 @@ class Gracz:
 
         #Animacja postaci
         
-        postac_lewo = "ninja_left.jpg"
-        postac_prawo = "ninj_right.jpg"
+    postac_lewo = "ninja_left"
+    postac_prawo = "ninj_right"
 
 # gracz.angle to jest kąt nachylenia gracza
         if self.keys_active['right']:
