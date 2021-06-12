@@ -16,7 +16,8 @@ enemy = Enemy()
 #mapa kolorowa, to tylko nakładka
 color_map = Actor('map1a.jpg', pos = (300, 360), achor = (0, 0)) #pos=(0, 60) coś tu się psuje
 
-def End_game():
+def End_game():   #tu może być otrzebne wstawić jakieś argumenty, żeby móc się odwołać do gracz.lives, gracz.money     
+                  #może powinno się to znaleść w graczu a nie w mainie?
     if gracz.lives <= 0 or gracz.money <= 0:
         global end_game
         end_game = True
