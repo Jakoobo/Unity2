@@ -1,0 +1,19 @@
+import pygame
+import random
+
+pygame.init()
+pygame.font.init()
+
+myfont = pygame.font.SysFont("Tahoma", 50)
+
+RED = 255, 0, 0
+WHITE = 255, 255, 255
+
+if: # if pokonane duszki
+    textsurface = myfont.render("Wygrałeś", True, WHITE)
+    screen.blit(textsurface, (0,0))
+
+if: # if pokonany przez duszki, czas
+    textsurface = myfont.render("Przegrałeś", True, RED)
+    screen.blit(textsurface, (0,0))
+    running = False
