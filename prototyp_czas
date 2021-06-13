@@ -1,6 +1,6 @@
 import time
 
-time_left = 5 #ile czasu pozostało graczowi
+time_left = 60 #ile czasu pozostało graczowi
 last_time = 0 #kiedy ostatnio sprawdzaliśmy czas
 end_by_time = False
 RED = 255, 0, 0
@@ -15,7 +15,7 @@ delta_time = now - last_time #ile czasu upłynęło od momentu kiedy sprawdzali�
 time_left -= delta_time
 last_time = now             #wyliczenia czasowe
 
-if time_left < 0 and not collision: #duszki
+if time_left < 0 and not collision: #dresiarz
     time_left = 0
     collision = True
     end_by_time = True
@@ -23,7 +23,7 @@ if time_left < 0 and not collision: #duszki
 
 if collision:
     if not end_by_time:
-    screen.draw.text("Duszek Ciebie zabił", center=(width/2, height/2), color = RED, fontsize=50*(width/800), fontname="bungee-regular", shadow=(1, 1))
+    screen.draw.text("Dresiarz Ciebie pokonał", center=(width/2, height/2), color = RED, fontsize=50*(width/800), fontname="bungee-regular", shadow=(1, 1))
 
 
 if not collision: #inna przyczyna, wyswietlamy ile czasu pozostalo
@@ -31,5 +31,5 @@ if not collision: #inna przyczyna, wyswietlamy ile czasu pozostalo
     rect = Rect(width/2 - lenght/2, 20*height/450-40, lenght, 20*height/450) #wysrodkowanie prostokatu
     screen.draw.filled_rect(Rect(), RED)
 
-#rozszerzenie czasu gdy łapiemy duszka
+#rozszerzenie czasu gdy złapiemy monete
 time_left += 0.2  #gdy zlapiemy monete to czas sie wydluza
